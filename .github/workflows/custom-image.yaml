@@ -25,7 +25,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  IMAGE: ghcr.io/uwuevelyn/jellyfin
+  IMAGE: ghcr.io/moe-studios/jellyfin
 
 jobs:
   build:
@@ -102,7 +102,7 @@ jobs:
             JELLYFIN_VERSION=13.0.0-s3.${{ github.run_number }}
           tags: ${{ env.IMAGE }}:s3-${{ github.run_number }}-${{ matrix.arch }}
           labels: |
-            org.opencontainers.image.source=https://github.com/uwuevelyn/jellyfin-packaging
+            org.opencontainers.image.source=https://github.com/moe-studios/jellyfin-packaging
             org.opencontainers.image.revision=${{ steps.rev.outputs.server }}
             moe.desuwa.jellyfin.web-revision=${{ steps.rev.outputs.web }}
 
